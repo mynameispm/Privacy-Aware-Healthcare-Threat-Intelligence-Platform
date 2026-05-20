@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ Sentinel Hue
+# 🛡️ LINDDUN PrivacyOps
 ### 🚀 Privacy-Aware Healthcare Threat Intelligence Platform
 
 <img src="https://img.shields.io/badge/Healthcare-Cybersecurity-blueviolet?style=for-the-badge"/>
