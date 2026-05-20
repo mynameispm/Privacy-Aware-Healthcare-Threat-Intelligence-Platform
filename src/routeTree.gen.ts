@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ThreatMatrixRouteImport } from './routes/threat-matrix'
+import { Route as ThreatAnalysisRouteImport } from './routes/threat-analysis'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as GdprRouteImport } from './routes/gdpr'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ThreatMatrixRoute = ThreatMatrixRouteImport.update({
+  id: '/threat-matrix',
+  path: '/threat-matrix',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThreatAnalysisRoute = ThreatAnalysisRouteImport.update({
+  id: '/threat-analysis',
+  path: '/threat-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GdprRoute = GdprRouteImport.update({
+  id: '/gdpr',
+  path: '/gdpr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/gdpr': typeof GdprRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/threat-analysis': typeof ThreatAnalysisRoute
+  '/threat-matrix': typeof ThreatMatrixRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/gdpr': typeof GdprRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/threat-analysis': typeof ThreatAnalysisRoute
+  '/threat-matrix': typeof ThreatMatrixRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/gdpr': typeof GdprRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/threat-analysis': typeof ThreatAnalysisRoute
+  '/threat-matrix': typeof ThreatMatrixRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/gdpr'
+    | '/reports'
+    | '/settings'
+    | '/threat-analysis'
+    | '/threat-matrix'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/gdpr'
+    | '/reports'
+    | '/settings'
+    | '/threat-analysis'
+    | '/threat-matrix'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/gdpr'
+    | '/reports'
+    | '/settings'
+    | '/threat-analysis'
+    | '/threat-matrix'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  GdprRoute: typeof GdprRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  ThreatAnalysisRoute: typeof ThreatAnalysisRoute
+  ThreatMatrixRoute: typeof ThreatMatrixRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/threat-matrix': {
+      id: '/threat-matrix'
+      path: '/threat-matrix'
+      fullPath: '/threat-matrix'
+      preLoaderRoute: typeof ThreatMatrixRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/threat-analysis': {
+      id: '/threat-analysis'
+      path: '/threat-analysis'
+      fullPath: '/threat-analysis'
+      preLoaderRoute: typeof ThreatAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gdpr': {
+      id: '/gdpr'
+      path: '/gdpr'
+      fullPath: '/gdpr'
+      preLoaderRoute: typeof GdprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +177,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  GdprRoute: GdprRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  ThreatAnalysisRoute: ThreatAnalysisRoute,
+  ThreatMatrixRoute: ThreatMatrixRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
