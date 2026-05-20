@@ -407,21 +407,27 @@ Contributions are welcome! 🚀
 ```
 
 ---
+# 👨‍💻 Authors
 
-# 📜 License
-
-📝 MIT License
+### 👑 Tejomai — Lead Developer & System Architect
+Tejomai led the complete development and architecture of the project, focusing on backend integration, LINDDUN threat modeling implementation, privacy intelligence workflows, API integration, and overall system engineering. The core functionality, healthcare privacy analysis engine, and enterprise threat intelligence structure were primarily designed and developed under his leadership.
 
 ---
 
-# 👨‍💻 Author
+### 🎨 Phaneendra M — UI/UX Engineer & Frontend Designer
+Phaneendra M was responsible for designing the futuristic enterprise cybersecurity dashboard and enhancing the overall user experience of the platform. He contributed to the frontend architecture, SOC-style visual design, glassmorphism UI components, dashboard responsiveness, and cybersecurity-inspired analytics interface.
 
-# PHANEENDRA M
+---
 
-🛡️ Cybersecurity Enthusiast  
-🔐 Privacy Engineering  
-🤖 AI Security  
-🏥 Healthcare Threat Intelligence  
+### 📄 Gowrish — Research & Documentation Support
+Gowrish contributed to the research and documentation aspects of the project, assisting in GDPR analysis, healthcare privacy research, threat documentation, and report preparation to support the overall privacy engineering workflow.
+
+---
+
+### 📚 Dakshija — Research & Report Development Support
+Dakshija supported the project through documentation, privacy threat analysis assistance, report structuring, and research contributions related to healthcare privacy compliance and cybersecurity reporting.
+
+
 
 ---
 
