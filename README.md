@@ -27,13 +27,13 @@
 
 # 🌌 Overview
 
-**Sentinel Hue** is an enterprise-grade healthcare privacy intelligence platform designed to identify, analyze, visualize, and mitigate privacy threats in healthcare applications using the **LINDDUN Privacy Threat Modeling Framework**.
+**LINDDUN PrivacyOps** is an enterprise-grade healthcare privacy intelligence platform designed to identify, analyze, visualize, and mitigate privacy threats in healthcare applications using the **LINDDUN Privacy Threat Modeling Framework**.
 
 The system simulates a modern 🖥️ SOC (Security Operations Center) environment for healthcare privacy analytics.
 
 ---
 
-# ❓ Why Sentinel Hue?
+# ❓ Why LINDDUN PrivacyOps?
 
 Modern healthcare applications process highly sensitive patient data including:
 
@@ -180,7 +180,7 @@ Generate downloadable enterprise cybersecurity reports including:
 
 ## ⚡ Cybersecurity Visual Language
 
-Sentinel Hue features:
+LINDDUN PrivacyOps features:
 
 🌑 Dark Mode  
 💙 Neon Blue Highlights  
@@ -429,6 +429,6 @@ Contributions are welcome! 🚀
 
 # ⭐ If you like this project, give it a Star ⭐
 
-### 🚀 Sentinel Hue — Securing Healthcare Privacy with Intelligence
+### 🚀 LINDDUN PrivacyOps — Securing Healthcare Privacy with Intelligence
 
 </div>
