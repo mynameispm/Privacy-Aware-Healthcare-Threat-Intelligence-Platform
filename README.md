@@ -1,422 +1,434 @@
-# MediSec SOC — Healthcare Privacy Intelligence Dashboard
+<div align="center">
 
-A futuristic, enterprise-grade Security Operations Center (SOC) dashboard built for healthcare cybersecurity and GDPR compliance monitoring. Features glassmorphism design, neon-blue cyber aesthetics, real-time data visualization, and interactive privacy threat analysis tools.
+# 🛡️ Sentinel Hue
+### 🚀 Privacy-Aware Healthcare Threat Intelligence Platform
 
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Tech Stack](#tech-stack)
-- [Design System](#design-system)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Components](#components)
-- [Routes](#routes)
-- [Charts & Visualizations](#charts--visualizations)
-- [Mock Data](#mock-data)
-- [Development](#development)
-- [Build & Deploy](#build--deploy)
-- [Architecture Decisions](#architecture-decisions)
+<img src="https://img.shields.io/badge/Healthcare-Cybersecurity-blueviolet?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/LINDDUN-Privacy%20Framework-red?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/GDPR-Compliant-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/React-TypeScript-61DAFB?style=for-the-badge&logo=react"/>
+<img src="https://img.shields.io/badge/Flask-Backend-black?style=for-the-badge&logo=flask"/>
+<img src="https://img.shields.io/badge/TailwindCSS-Styled-38bdf8?style=for-the-badge&logo=tailwindcss"/>
+<img src="https://img.shields.io/badge/Enterprise-SOC%20Dashboard-blue?style=for-the-badge"/>
 
 ---
 
-## Overview
+## 🔥 Futuristic Healthcare Privacy Intelligence System  
+### Built using the 🧠 LINDDUN Privacy Threat Modeling Framework
 
-MediSec SOC is a healthcare privacy intelligence platform designed for security teams monitoring threats to protected health information (PHI), biometric data, and patient records. The dashboard provides:
+🚨 Detect Privacy Threats  
+📊 Analyze GDPR Compliance  
+🛡️ Generate PET Recommendations  
+📈 Visualize Healthcare Risk Analytics  
 
-- Real-time threat severity monitoring
-- LINDDUN privacy threat taxonomy analysis
-- GDPR compliance scoring per regulatory principle
-- Privacy Enhancing Technology (PET) recommendations
-- Interactive threat matrices with search, filter, and sort
-- Downloadable compliance and incident reports
-
-The visual language draws from cybersecurity operations centers: dark backgrounds, neon-blue glow effects, glassmorphic panels, and subtle grid animations create an immersive command-center experience.
+</div>
 
 ---
 
-## Tech Stack
+# 🌌 Overview
 
-| Layer | Technology |
-|-------|------------|
-| Framework | [TanStack Start](https://tanstack.com/start) v1 (React 19, SSR/SSG, file-based routing) |
-| Build Tool | Vite 7 |
-| Language | TypeScript 5.8 (strict mode) |
-| Styling | Tailwind CSS 4 with custom `@theme` tokens |
-| Animation | Framer Motion |
-| Charts | Recharts |
-| Forms | React Hook Form + Zod |
-| Icons | Lucide React |
-| UI Primitives | Radix UI (via shadcn/ui components) |
-| Runtime | Cloudflare Workers (edge) |
+**Sentinel Hue** is an enterprise-grade healthcare privacy intelligence platform designed to identify, analyze, visualize, and mitigate privacy threats in healthcare applications using the **LINDDUN Privacy Threat Modeling Framework**.
+
+The system simulates a modern 🖥️ SOC (Security Operations Center) environment for healthcare privacy analytics.
 
 ---
 
-## Design System
+# ❓ Why Sentinel Hue?
 
-### Color Palette (OKLCH)
+Modern healthcare applications process highly sensitive patient data including:
 
-The entire theme is defined in `src/styles.css` using OKLCH color space for perceptually uniform colors:
+🧬 Biometrics  
+📍 GPS Tracking  
+🩺 Medical Records  
+🔐 Authentication Credentials  
+📱 Device Telemetry  
+📊 Behavioral Analytics  
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--background` | `oklch(0.12 0.02 250)` | Page background |
-| `--foreground` | `oklch(0.96 0.02 220)` | Primary text |
-| `--primary` | `oklch(0.72 0.2 240)` | Neon blue — links, buttons, highlights |
-| `--cyan` | `oklch(0.85 0.18 195)` | Accent cyan for gradients |
-| `--success` | `oklch(0.78 0.18 160)` | Green — healthy status |
-| `--warning` | `oklch(0.82 0.18 80)` | Amber — medium risk |
-| `--critical` | `oklch(0.65 0.25 20)` | Red — critical threats |
-| `--neon` | `oklch(0.75 0.22 235)` | Glow color for borders and shadows |
+Most healthcare systems fail to:
 
-### Custom Utilities
-
-| Utility | Description |
-|---------|-------------|
-| `.glass` | Semi-transparent background with `backdrop-blur(18px)` and subtle border |
-| `.glass-strong` | More opaque glass with `backdrop-blur(24px)` for headers and panels |
-| `.neon-border` | Cyan border with multi-layered box-shadow glow |
-| `.gradient-text` | Gradient text clip from primary to cyan |
-| `.grid-bg` | Subtle CSS grid lines for the SOC aesthetic |
-| `.scan-line` | Animated vertical scan-line effect |
-
-### Typography
-
-- **Display font**: Orbitron (fallback: Inter) — used for headings, stat numbers, and brand text
-- **Body font**: System sans-serif stack via Tailwind
-- **Monospace**: Used for IDs, timestamps, and technical values
+❌ detect privacy exposure  
+❌ ensure GDPR compliance  
+❌ visualize healthcare risks  
+❌ implement privacy engineering practices  
 
 ---
 
-## Features
+# 🚀 Key Features
 
-### 1. Dashboard (`/`)
+# 🧠 Automated LINDDUN Threat Engine
 
-The main command center displaying:
-- **5 Stat Cards**: Total Threats, Critical Threats, GDPR Compliance %, Privacy Risk Score, PET Recommendations — each with animated progress bars and hover lift effects
-- **Threat Severity Distribution**: Donut chart breaking down threats by Critical/High/Medium/Low
-- **LINDDUN Threat Categories**: Bar chart visualizing the 7-category LINDDUN privacy threat taxonomy
-- **GDPR Compliance Posture**: Radar chart scoring 6 GDPR principles
-- **Risk vs Mitigation Trend**: 12-month area chart comparing active risk against mitigated risk
+Automatically detects:
 
-### 2. Threat Analysis (`/threat-analysis`)
-
-An interactive assessment form for evaluating healthcare application privacy risk:
-
-- **Application Configuration**: Name and type (EHR, Telehealth, Wearable, Imaging, Pharmacy, Genomics)
-- **6 Toggle Switches**:
-  - Medical Data Collection (PHI, diagnoses, prescriptions)
-  - Biometrics (fingerprint, facial, gait)
-  - GPS Tracking (location & geofencing)
-  - Encryption Enabled (AES-256 at-rest & in-transit)
-  - Consent Collection (GDPR Article 7)
-  - Logging Enabled (audit trail & SIEM forwarding)
-- **Live Risk Scoring** (0–100): Dynamically calculated based on toggled options
-  - Missing encryption: +25 points
-  - Missing consent: +20 points
-  - Medical data enabled: +18 points
-  - Biometrics enabled: +15 points
-  - Missing logging: +12 points
-  - GPS enabled: +10 points
-- **PET Recommendations**: Context-aware suggestions including homomorphic encryption for biometrics, differential privacy for GPS, k-anonymity for datasets
-
-Powered by **React Hook Form** with **Zod** schema validation.
-
-### 3. Threat Matrix (`/threat-matrix`)
-
-A fully interactive threat registry table:
-
-- **Search**: Real-time filtering by threat ID, asset name, or category
-- **Severity Filter**: Toggle between All / Critical / High / Medium / Low
-- **Sortable Columns**: Click any column header to sort ascending/descending
-- **Animated Rows**: Framer Motion staggered entry animations
-- **Color-Coded Badges**: Severity and status have distinct neon color schemes
-- **Mock Data**: 10 realistic healthcare threats (PatientPortal API, EHR Sync, Telehealth Stream, etc.)
-
-### 4. GDPR Compliance (`/gdpr`)
-
-A compliance monitoring page with:
-
-- **Radar Chart**: Visual score across 6 GDPR principles (Consent, Data Minimization, Encryption, Access Control, Retention, Breach Notification)
-- **Principle Scorecard**: Animated progress bars with color-coded status indicators
-- Score breakdown:
-  - Consent: 94%
-  - Encryption: 98%
-  - Breach Notification: 92%
-  - Access Control: 89%
-  - Data Minimization: 86%
-  - Retention: 78%
-
-### 5. Reports (`/reports`)
-
-A document management interface:
-
-- **Featured Report Cards**: 3 highlighted downloadable cards with hover lift, gradient glow orbs, and PDF export buttons
-- **Report History Table**: Complete list of 6 generated reports with ID, title, type, date, size, and export action
-- **PDF Export Simulation**: Client-side blob generation with realistic metadata
-
-### 6. Analytics (`/analytics`)
-
-Deep-dive analytics page with full-size charts:
-- Risk vs Mitigation 12-month area chart
-- LINDDUN distribution bar chart
-- Severity breakdown pie chart
-
-### 7. Settings (`/settings`)
-
-Platform configuration panels:
-- Organization details (MediSec Health Network, EU-West, Enterprise tier)
-- Security settings (MFA, Session timeout, Audit logging)
-- Notification preferences (Critical alerts, Daily digest, Weekly report)
+| Threat | Description |
+|---|---|
+| 🔗 Linking | Correlating healthcare user activities |
+| 🆔 Identifying | Revealing patient identity |
+| 📜 Non-Repudiation | Immutable patient logs |
+| 👁️ Detectability | Tracking patient activity |
+| 📂 Data Disclosure | Sensitive data exposure |
+| ⚠️ Unawareness | Hidden tracking or unclear consent |
+| 📛 Non-Compliance | GDPR/privacy law violations |
 
 ---
 
-## Project Structure
+# 🖥️ Enterprise SOC Dashboard
 
-```
-├── src/
-│   ├── components/
-│   │   ├── charts/                 # Recharts visualizations
-│   │   │   ├── GdprRadar.tsx       # Radar chart for GDPR principles
-│   │   │   ├── LinddunBar.tsx      # Bar chart for LINDDUN categories
-│   │   │   ├── RiskTrend.tsx       # Area chart for risk over time
-│   │   │   └── SeverityPie.tsx     # Donut chart for threat severity
-│   │   ├── layout/                 # Shell components
-│   │   │   ├── AppLayout.tsx       # Page wrapper (sidebar + topbar + main)
-│   │   │   ├── Sidebar.tsx         # Navigation sidebar with animated indicators
-│   │   │   └── TopBar.tsx          # Header with search, notifications, profile
-│   │   ├── ui/                     # shadcn/ui primitive components
-│   │   ├── Panel.tsx               # Glassmorphic card container with title/subtitle
-│   │   ├── StatCard.tsx            # Animated KPI card with progress bar
-│   │   ├── ThreatForm.tsx          # Interactive threat assessment form
-│   │   └── ThreatTable.tsx         # Sortable/filterable threat registry
-│   ├── lib/
-│   │   ├── mock-data.ts            # All demo data (stats, threats, reports, chart data)
-│   │   ├── utils.ts                # cn() utility for Tailwind class merging
-│   │   ├── error-capture.ts        # Error handling utilities
-│   │   └── error-page.ts           # Error page helpers
-│   ├── routes/                     # TanStack Start file-based routes
-│   │   ├── __root.tsx              # Root layout (HTML shell)
-│   │   ├── index.tsx               # Dashboard (home)
-│   │   ├── threat-analysis.tsx     # Threat analysis form page
-│   │   ├── threat-matrix.tsx       # Threat registry table page
-│   │   ├── gdpr.tsx                # GDPR compliance page
-│   │   ├── reports.tsx             # Reports library page
-│   │   ├── analytics.tsx           # Deep analytics page
-│   │   └── settings.tsx            # Platform settings page
-│   ├── router.tsx                  # TanStack Router configuration
-│   ├── server.ts                   # Server entry
-│   ├── start.ts                    # Start instance with middleware
-│   └── styles.css                  # Global styles, theme tokens, utilities
-├── public/                         # Static assets
-├── vite.config.ts                  # Vite configuration
-├── wrangler.jsonc                  # Cloudflare Workers config
-├── tsconfig.json                   # TypeScript configuration
-├── package.json
-└── README.md
-```
+✨ Futuristic cyber dashboard inspired by:
+- SIEM platforms
+- SOC monitoring systems
+- Cyber defense analytics
+
+### Includes:
+✅ Real-time style analytics  
+✅ Animated cyber cards  
+✅ Glassmorphism UI  
+✅ Neon blue cyber aesthetics  
+✅ Responsive design  
+✅ Animated charts  
 
 ---
 
-## Components
+# 📊 Analytics & Visualization
 
-### `AppLayout`
+## Interactive Charts
 
-```tsx
-<AppLayout title="Page Title" subtitle="Page description">
-  {children}
-</AppLayout>
-```
-
-Standard page wrapper providing the sidebar, topbar, and main content area with the grid background.
-
-### `Panel`
-
-```tsx
-<Panel title="Chart Title" subtitle="Description">
-  <AnyChart />
-</Panel>
-```
-
-Glassmorphic container with animated entrance, optional title/subtitle header, and a pulsing status dot.
-
-### `StatCard`
-
-```tsx
-<StatCard
-  label="Total Threats"
-  value="1,248"
-  delta="+42 last 24h"
-  icon={ShieldAlert}
-  tone="primary"
-  index={0}
-/>
-```
-
-KPI card with tone-mapped gradient glow, animated progress bar, and Framer Motion hover lift.
-
-### `ThreatForm`
-
-Self-contained form component with live risk calculation and PET recommendation generation. Uses `react-hook-form` + `zodResolver` for validation.
-
-### `ThreatTable`
-
-Fully controlled table with:
-- `useMemo` for filtered/sorted data
-- `useState` for query, severity filter, and sort state
-- Framer Motion row animations
-- Responsive horizontal scroll
+📈 Risk Trend Graphs  
+🥧 Threat Severity Pie Charts  
+📡 Privacy Exposure Analytics  
+📉 GDPR Compliance Radar Charts  
+📊 LINDDUN Distribution Analytics  
 
 ---
 
-## Routes
+# 🧮 Privacy Risk Scoring Engine
 
-| Route | File | Description |
-|-------|------|-------------|
-| `/` | `src/routes/index.tsx` | Main dashboard with 5 stat cards and 4 charts |
-| `/threat-analysis` | `src/routes/threat-analysis.tsx` | Interactive LINDDUN threat assessment form |
-| `/threat-matrix` | `src/routes/threat-matrix.tsx` | Searchable, sortable threat registry |
-| `/gdpr` | `src/routes/gdpr.tsx` | GDPR compliance radar and scorecard |
-| `/reports` | `src/routes/reports.tsx` | Report cards and download history |
-| `/analytics` | `src/routes/analytics.tsx` | Full-page chart deep-dive |
-| `/settings` | `src/routes/settings.tsx` | Platform configuration |
+Generate:
 
----
+🛡️ Privacy Risk Score  
+📋 GDPR Compliance Score  
+⚠️ Threat Severity Levels  
 
-## Charts & Visualizations
+### Severity Classification
 
-All charts use **Recharts** with responsive containers and custom OKLCH-themed styling:
-
-| Chart | Component | Type | Data |
-|-------|-----------|------|------|
-| Threat Severity | `SeverityPie` | Donut (PieChart) | Critical: 37, High: 124, Medium: 412, Low: 675 |
-| LINDDUN Categories | `LinddunBar` | Bar (gradient fill) | 7 privacy threat categories |
-| GDPR Posture | `GdprRadar` | Radar | 6 GDPR principle scores |
-| Risk Trend | `RiskTrend` | Dual Area (2 series) | 12 months of risk vs mitigated data |
+🟢 Low  
+🟡 Medium  
+🟠 High  
+🔴 Critical  
 
 ---
 
-## Mock Data
+# 🔐 PET Recommendation Engine
 
-All demo data lives in `src/lib/mock-data.ts`:
+Generate automated Privacy Enhancing Technology recommendations:
 
-```typescript
-export const stats = {
-  totalThreats: 1248,
-  criticalThreats: 37,
-  gdprScore: 92,
-  privacyRisk: 28,
-  petRecs: 14,
-};
+✅ AES-256 Encryption  
+✅ MFA  
+✅ Tokenization  
+✅ Differential Privacy  
+✅ Pseudonymization  
+✅ Secure Cookie Policies  
+✅ Access Control  
+✅ Data Minimization  
 
-export const threats: Threat[] = [ /* 10 realistic healthcare threats */ ];
-export const reports = [ /* 6 generated reports */ ];
-export const severityData = [ /* donut chart data */ ];
-export const linddunData = [ /* LINDDUN 7 categories */ ];
-export const gdprRadar = [ /* 6 GDPR principles */ ];
-export const riskTrend = [ /* 12-month trend */ ];
+---
+
+# 📂 Threat Matrix Module
+
+Enterprise-grade threat intelligence table with:
+
+| Feature | Included |
+|---|---|
+| 🔍 Filtering | ✅ |
+| 📑 Sorting | ✅ |
+| 📤 Export Support | ✅ |
+| 📊 Severity Analytics | ✅ |
+| ⚠️ Risk Categorization | ✅ |
+
+---
+
+# 🖼️ DFD Visualization System
+
+Upload:
+
+✅ PNG  
+✅ JPG  
+✅ SVG  
+✅ Threat Dragon exports  
+
+Visualize:
+- trust boundaries
+- healthcare data flows
+- exposure points
+
+---
+
+# 📄 PDF Report Generation
+
+Generate downloadable enterprise cybersecurity reports including:
+
+📋 Threat Summary  
+📊 Charts & Analytics  
+⚠️ Threat Matrix  
+📜 GDPR Mapping  
+🛡️ PET Recommendations  
+📈 Risk Analytics  
+🖼️ DFD Diagrams  
+
+---
+
+# 🎨 UI/UX Design
+
+## ⚡ Cybersecurity Visual Language
+
+Sentinel Hue features:
+
+🌑 Dark Mode  
+💙 Neon Blue Highlights  
+✨ Glassmorphism Cards  
+🔥 Glowing Borders  
+🎞️ Smooth Motion Effects  
+📱 Responsive Layouts  
+🛡️ Enterprise SOC Appearance  
+
+---
+
+# 🏗️ Tech Stack
+
+# 🎨 Frontend
+
+| Technology | Purpose |
+|---|---|
+| ⚛️ React | UI Framework |
+| ⚡ Vite | Build Tool |
+| 🔷 TypeScript | Type Safety |
+| 🎨 Tailwind CSS | Styling |
+| 🎞️ Framer Motion | Animations |
+| 📊 Recharts | Analytics |
+| 🧭 React Router | Routing |
+
+---
+
+# ⚙️ Backend
+
+| Technology | Purpose |
+|---|---|
+| 🐍 Flask | API Backend |
+| 🗄️ SQLite | Local Database |
+| 🛢️ MySQL | Production Database |
+
+---
+
+# 🧰 Utilities
+
+| Tool | Purpose |
+|---|---|
+| 📄 jsPDF | PDF Reports |
+| 📸 html2canvas | Dashboard Screenshots |
+| 🧾 React Hook Form | Form Handling |
+| ✅ Zod | Validation |
+
+---
+
+# 🏛️ System Architecture
+
+```text
+Frontend (React + Tailwind)
+            ↓
+        REST APIs
+            ↓
+    Threat Intelligence Engine
+            ↓
+  GDPR & Risk Scoring Engine
+            ↓
+     SQLite / MySQL Database
 ```
 
 ---
 
-## Development
+# 🧠 Threat Detection Logic
 
-### Prerequisites
+```python
+if gps_tracking:
+    trigger("Linking")
 
-- [Bun](https://bun.sh/) (recommended) or Node.js 20+
+if biometrics:
+    trigger("Identifying")
 
-### Install Dependencies
+if encryption_disabled:
+    trigger("Data Disclosure")
+```
+
+---
+
+# 📁 Project Structure
+
+```text
+src/
+├── components/
+├── pages/
+├── layouts/
+├── hooks/
+├── services/
+├── utils/
+├── lib/
+├── types/
+├── charts/
+├── uploads/
+├── reports/
+└── styles/
+```
+
+---
+
+# ⚡ Installation
+
+# 📥 Clone Repository
 
 ```bash
-bun install
-```
-
-### Start Development Server
-
-```bash
-bun run dev
-```
-
-The Vite dev server starts at `http://localhost:3000` with hot module replacement.
-
-### Code Quality
-
-```bash
-bun run lint      # ESLint
-bun run format    # Prettier
+git clone https://github.com/mynameispm/sentinel-hue.git
 ```
 
 ---
 
-## Build & Deploy
-
-### Production Build
+# 📂 Navigate Into Project
 
 ```bash
-bun run build
-```
-
-Generates an optimized static/SSR bundle for Cloudflare Workers.
-
-### Development Build
-
-```bash
-bun run build:dev
-```
-
-### Preview
-
-```bash
-bun run preview
-```
-
-### Deploy (Cloudflare Workers)
-
-This project is configured for Cloudflare Workers via `wrangler.jsonc`. Deploy with:
-
-```bash
-npx wrangler deploy
+cd sentinel-hue
 ```
 
 ---
 
-## Architecture Decisions
+# 🎨 Frontend Setup
 
-### Why TanStack Start?
-
-TanStack Start provides file-based routing, built-in SSR/SSG, and server functions — all within a single Vite-based framework. It eliminates the need for separate Next.js or Remix setups while maintaining type-safe routing.
-
-### Why OKLCH Colors?
-
-OKLCH provides perceptually uniform color space, meaning lightness values actually correspond to perceived brightness. This ensures the dark theme maintains consistent contrast ratios across all hues.
-
-### Why Recharts over D3?
-
-Recharts offers React-native chart composition with far less boilerplate than D3. For a dashboard with standard chart types (pie, bar, radar, area), Recharts provides excellent defaults while remaining fully customizable via SVG primitives.
-
-### Glassmorphism Strategy
-
-Glass effects are achieved through:
-1. `backdrop-filter: blur()` for the frosted effect
-2. Semi-transparent gradients for depth
-3. Subtle borders with low-opacity OKLCH values
-4. Inset box-shadows for internal highlight edges
-
-This approach performs well on modern browsers and avoids heavy canvas/WebGL dependencies.
-
-### Form Architecture
-
-The threat analysis form uses a controlled toggle pattern with `react-hook-form`'s `watch()` and `setValue()` for instantaneous UI feedback. Zod schema ensures type safety from form inputs through validation to the risk calculation engine.
+```bash
+npm install
+npm run dev
+```
 
 ---
 
-## License
+# ⚙️ Backend Setup
 
-Private — MediSec Health Network Internal Use
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
 ---
 
-<p align="center">
-  <sub>Built with <span style="color: oklch(0.72 0.2 240)">&#9670;</span> for healthcare security teams.</sub>
-</p>
+# 🔑 Environment Variables
+
+Create `.env` file:
+
+```env
+VITE_API_URL=http://localhost:5000
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=password
+DB_NAME=sentinel_hue
+```
+
+---
+
+# 🚀 Deployment
+
+# 🌐 Frontend
+
+Deploy easily using:
+- Vercel
+
+# ⚙️ Backend
+
+Deploy using:
+- Render
+- Railway
+
+---
+
+# 📸 Screenshots
+
+# 🖥️ Dashboard
+
+```text
+(Add Dashboard Screenshot Here)
+```
+
+---
+
+# 📊 Threat Matrix
+
+```text
+(Add Threat Matrix Screenshot Here)
+```
+
+---
+
+# 📈 GDPR Analytics
+
+```text
+(Add GDPR Analytics Screenshot Here)
+```
+
+---
+
+# 🔒 Security Features
+
+✅ Input Validation  
+✅ XSS Prevention  
+✅ Secure Upload Handling  
+✅ API Validation  
+✅ Environment Variable Protection  
+✅ Encryption Support  
+
+---
+
+# 🚀 Future Enhancements
+
+🤖 AI-powered Threat Prediction  
+🛰️ SIEM Integrations  
+📡 Real-time Monitoring  
+🔗 Blockchain Audit Trails  
+🧠 ML-based Anomaly Detection  
+👥 Multi-user Role Management  
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome! 🚀
+
+```bash
+1. Fork the Repository
+2. Create Feature Branch
+3. Commit Changes
+4. Push Branch
+5. Open Pull Request
+```
+
+---
+
+# 📜 License
+
+📝 MIT License
+
+---
+
+# 👨‍💻 Author
+
+# PHANEENDRA M
+
+🛡️ Cybersecurity Enthusiast  
+🔐 Privacy Engineering  
+🤖 AI Security  
+🏥 Healthcare Threat Intelligence  
+
+---
+
+<div align="center">
+
+# ⭐ If you like this project, give it a Star ⭐
+
+### 🚀 Sentinel Hue — Securing Healthcare Privacy with Intelligence
+
+</div>
